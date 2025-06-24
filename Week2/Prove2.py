@@ -10,9 +10,9 @@ verb4 = input("Give me a past tense verb: ")
 
 vowels = ["a", "e", "i", "o", "u"]
 
-aOrAn = "a"
+a_or_An = "a"
 if(thing[0].lower() in vowels):
-    aOrAn = "an"
+    a_or_An = "an"
 
 print(
 f"""The other day, I was really in trouble. It all started when I saw a very
@@ -21,6 +21,6 @@ I could think to do was to {verb2} over and over. Miraculously,
 that caused it to stop, but not before it tried to {verb3}
 right in front of {person1}.
 
-All of a sudden {person1} pulled {aOrAn} {thing} out from behind their back and {verb4} towards the {animal1}
+All of a sudden {person1} pulled {a_or_An} {thing} out from behind their back and {verb4} towards the {animal1}
 """
 )
