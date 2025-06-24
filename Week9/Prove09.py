@@ -10,6 +10,9 @@ def addItem():
     print(f"{item} has been added to the cart.")
 
 def printCart():
+    if(len(shopping_cart.keys()) == 0):
+        print("There are no items in the cart! Add an item first")
+        return
     print("The contents of the shopping cart are:")
     counter = 1
     for item, price in shopping_cart.items():
@@ -17,7 +20,16 @@ def printCart():
         counter+=1
 
 def removeItem():
+    if(len(shopping_cart.keys()) == 0):
+        print("There are no items to remove! Add an item first")
+        return
+    
     selection = int(input("Which item would you like to remove? ")) - 1
+
+    if(selection > len(shopping_cart.keys()) - 1 or selection < 0):
+        print(f"please try again with a number that is in bound: 1-{len(shopping_cart.keys())}")
+        removeItem()
+        return
     items = list(shopping_cart.keys())
     item = items[selection]
     shopping_cart.pop(item)
